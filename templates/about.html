@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+      /* Style du corps de la page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+/* Style de la barre de navigation */
+.navbar {
+    background-color: #343a40;
+}
+
+.navbar-brand {
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+/* Style des sections Mission et Team */
+.container {
+    margin-top: 50px;
+}
+
+.mission, .team {
+    margin-bottom: 30px;
+}
+
+.mission h2, .team h2 {
+    color: #343a40;
+}
+
+.mission p, .team ul {
+    color: #6c757d;
+}
+
+/* Style de la liste de l'équipe */
+.team ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.team li {
+    margin-bottom: 10px;
+}
+
+.team li strong {
+    color: #343a40;
+}
+
+/* Style du pied de page */
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.footer a {
+    color: #ffffff;
+}
+
+/* Media query pour rendre le contenu plus lisible sur les petits écrans */
+@media (max-width: 768px) {
+    .container {
+        margin-top: 20px;
+    }
+}
+
+/* Style du SVG */
+.svg-container {
+    text-align: center;
+}
+
+.svg-container svg {
+    width: 200px;
+    height: auto;
+}
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Heart Disease Predictor</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/predict">Predict</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="mission">
+        <h2>Our Mission</h2>
+        <p>Our mission is to improve health outcomes by providing individuals with a user-friendly tool for predicting heart disease risk using machine learning. We aim to empower users to take control of their heart health through early detection and proactive management.</p>
+    </div>
+    <div class="team">
+        <h2>Our Team</h2>
+        <ul>
+            <li><strong>BENELARBI Mohamed:</strong> Data Scientist / UX Designer</li>
+            <li><strong>SAJAI Bilal:</strong> Data Scientist / UX Designer</li>
+        </ul>
+    </div>
+    <div class="svg-container">
+        <!-- SVG représentant une équipe de médecins -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
+          <path d="M17 20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v11zM15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+          <circle cx="8.5" cy="7" r="4"></circle>
+          <path d="M17 8v4M23 11H20"></path>
+        </svg>
+    </div>
+</div>
+
+</body>
+</html>

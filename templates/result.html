@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Predictor</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .container-heading {
+            font-family: 'Pacifico', cursive;
+            color: #343a40;
+        }
+
+        .description {
+            margin-top: 20px;
+            color: #6c757d;
+        }
+
+        .results {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .results h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .danger {
+            color: #dc3545;
+        }
+
+        .safe {
+            color: #28a745;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .contact {
+            margin-bottom: 10px;
+        }
+
+        .contact a {
+            color: #fff;
+            margin: 0 10px;
+        }
+
+        .footer-description {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Website Title -->
+<div class="container">
+    <h2 class='container-heading'><span class="heading_font">Heart Disease Predictor</span></h2>
+    <div class='description'>
+        <p>A Machine Learning Web App, Built with Flask.</p>
+    </div>
+</div>
+
+<!-- Result -->
+<div class="results">
+    {% if prediction==1 %}
+        <h1>Prediction: <span class='danger'>Oops! You have Chances of Heart Disease.</span></h1>
+    {% elif prediction==0 %}
+        <h1>Prediction: <span class='safe'>Great! you're OK !.</span></h1>
+    {% endif %}
+</div>
+
+<!-- Footer -->
+<div class='footer'>
+    <div class="contact">
+        <a target="_blank" href="https://github.com/asthasharma98/Heart-Disease-Prediction-Deployment"><i class="fab fa-github fa-lg contact-icon"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/astha-sharma-47266b11b/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+    </div>
+    <p class='footer-description'>Made by Bilal And Mohammed.</p>
+</div>
+
+</body>
+</html>

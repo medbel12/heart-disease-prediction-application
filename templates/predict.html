@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Disease Predictor</title>
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      background-image: url("{{ url_for('static', filename='background.png') }}");
+      background-size: cover;
+    }
+  </style>
+</head>
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Heart Disease Predictor</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/predict">Predict</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<!-- Prediction Form -->
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-center">Fill out the form</h5>
+            <form class="mt-4" action="/predict" method="post">
+
+                    <div class="form-group">
+                        <input type="number" name="age" id="age" class="form-control" placeholder="Enter Your Age" required>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control" name="sex" required="required">
+                            <option value="" selected>Select Gender</option>
+                            <option value="1">Male</option>
+                            <option value="0">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control chosenn" name="cp" required="required">
+                            <option value="" selected>Select Chest Pain Type(cp)</option>
+                            <option value="0">Typical Angina</option>
+                            <option value="1">Atypical Angina</option>
+                            <option value="2">Non Anginal Pain</option>
+                            <option value="3">Asymptomatic</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" name="trestbps" id="trestbps" class="form-control" placeholder="Enter Resting Blood Pressure (mm Hg)(trestbps)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" name="chol" id="chol" class="form-control" placeholder="Enter Serum Cholestoral (mg/dl)(chol)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control" name="fbs" required="required">
+                            <option value="" selected>Fasting Blood Sugar > 120 (mg/dl)(fbs)</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control chosenn" name="restecg" required="required">
+                            <option value="" selected>Rresting Electrocardiographic Results(restecg)</option>
+                            <option value="0">Normal</option>
+                            <option value="1">Abnormal</option>
+                            <option value="2">Probable</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" name="thalach" id="thalach" class="form-control" placeholder="Enter Maximum Heart Rate Achieved (thalach)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control" name="exang" required="required">
+                            <option value="" selected>Select Exercise Induced Angina (exang)</option>
+                            <option value="1">Yes</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="oldpeak" id="oldpeak" class="form-control" placeholder="Enter Your Oldpeak(oldpeak)" required>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control chosenn" name="slope" required="required">
+                            <option value="" selected>Select Peak Exercise ST Segment (Slope)</option>
+                            <option value="0">Upsloping</option>
+                            <option value="1">Flat</option>
+                            <option value="2">Downsloping</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control chosenn" name="ca" required="required">
+                            <option value="" selected>Number of Major Vessels (ca)</option>
+                            <option value="0">Zero</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control chosenn" name="thal" required="required">
+                            <option value="" selected>Select Thal Type (thal)</option>
+                            <option value="0">Normal</option>
+                            <option value="1">Fixed</option>
+                            <option value="2">Defect</option>
+                            <option value="3">Reversable</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                        <input type="reset" class="btn btn-danger" value="Reset">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <div class="contact">
+        <a target="_blank" href="https://github.com/Bilalsajai1"><i class="fab fa-github fa-lg contact-icon"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/bilal-sajai-639324293/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+      </div>
+      <p class="footer-description">Made by Bilal and Mohamed.</p>
+    </div>
+  </footer>
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

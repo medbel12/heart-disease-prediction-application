@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heart Disease Predictor</title>
+  <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">Heart Disease Predictor</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/predict">Predict</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+ <!-- Homepage Presentation -->
+ <div class="container mt-5">
+  <h2 class="text-center">Heart Disease Predictor</h2>
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-8">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text">Welcome to the Heart Disease Prediction App. This app uses machine learning to predict the likelihood of heart disease based on various factors.
+
+            Early detection of heart disease can significantly improve health outcomes. Use this app to assess your risk.
+
+            This project aims to provide a user-friendly tool for predicting heart disease risk using machine learning.
+
+            It uses a dataset containing various health metrics to predict the likelihood of heart disease.</p>
+          <p class="card-text">Simply fill out the form fields to receive your prediction!</p>
+          <div class="heart-rate">
+            <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="73px" viewBox="0 0 150 73" enable-background="new 0 0 150 73" xml:space="preserve">
+              <polyline fill="none" stroke="#009B9E" stroke-width="3" stroke-miterlimit="10" points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486"
+              />
+            </svg>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <div class="contact">
+        <a target="_blank" href="https://github.com/Bilalsajai1"><i class="fab fa-github fa-lg contact-icon"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/in/bilal-sajai-639324293/"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
+      </div>
+      <p class="footer-description">Made by Bilal and Mohamed.</p>
+    </div>
+  </footer>
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
+
+</html>
